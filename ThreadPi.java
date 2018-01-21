@@ -65,8 +65,8 @@ public class ThreadPi {
             totalIn += i;
         }
 
-        float valOfPiOneQuad = totalIn / (float)numIterations;
-        float pi = valOfPiOneQuad * 4;
+        double valOfPiOneQuad = totalIn / (double)numIterations;
+        double pi = valOfPiOneQuad * 4;
         System.out.println("Value of pi = " + pi);
 
     }
@@ -86,11 +86,11 @@ public class ThreadPi {
         @Override
         public void run() {
             Random rand = new Random();
-            float xPos;
-            float yPos;
+            double xPos;
+            double yPos;
             for (long i = (threadNum * numberToDo); i < ( (threadNum + 1) * (numberToDo)); i++) {
-                xPos = rand.nextFloat();
-                yPos = rand.nextFloat();
+                xPos = rand.nextDouble();
+                yPos = rand.nextDouble();
                 if ( ( Math.pow(xPos, 2) + Math.pow(yPos, 2) ) < 1) {
                     numIn[threadNum]++;
                 }
